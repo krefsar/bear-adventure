@@ -74,7 +74,7 @@ func (g *GameManager) GoDirection(direction string) (nextLocation string) {
 				direction = "west"
 		}
 
-		return g.CurrentLocation.GoDirection(direction)
+		return g.CurrentLocation.GetLocationInDirection(direction)
 	} else {
 		fmt.Printf("%s is not an available direction. Available directions are North, South, East, and West.\n", strings.Title(direction))
 		return ""
@@ -105,7 +105,7 @@ type Location struct {
 	PrintDescription PrintDescriptionFunc
 }
 
-func (l *Location) GoDirection(direction string) (nextLocation string) {
+func (l *Location) GetLocationInDirection(direction string) (nextLocation string) {
 	connectedLocation, present := l.ConnectionMap[direction]
 
 	if !present {
