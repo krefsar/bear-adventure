@@ -27,7 +27,7 @@ func main() {
 	fmt.Printf("Great! You are a bear named %s, and your adventure is about to begin!\n", gm.Player.Name)
 	fmt.Println()
 
-	gm.EnterLocation("Intro1")
+	gm.EnterLocation("DenLocation")
 
 	for !gm.GameOver {
 		fmt.Println()
